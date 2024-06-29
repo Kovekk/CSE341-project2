@@ -108,11 +108,12 @@ controller.addMagicItem = function (req, res) {
     const playerId = new ObjectId(req.params.id);
     const result = mongodb.getDb().db().collection('players').find({ _id: playerId });
     result.toArray().then((playerResult) => {
+        let magicItems
         try {
             if (!playerResult[0]) {
                 throw createError(404, 'Player with that id does not exist.');
             }
-            let magicItems = playerResult[0].magicItemList;
+            magicItems = playerResult[0].magicItemList;
             magicItems.push(magicItemId);
         } catch (error) {
             console.log(error.message);
@@ -132,11 +133,12 @@ controller.removeMagicItem = function (req, res) {
     const playerId = new ObjectId(req.params.id);
     const result = mongodb.getDb().db().collection('players').find({ _id: playerId });
     result.toArray().then((playerResult) => {
+        let magicItems
         try {
             if (!playerResult[0]) {
                 throw createError(404, 'Player with that id does not exist.');
             }
-            let magicItems = playerResult[0].magicItemList;
+            magicItems = playerResult[0].magicItemList;
             // remove an item from magic items list
             const index = magicItems.indexOf(magicItemId);
             console.log(index);
@@ -159,11 +161,12 @@ controller.getMagicItemList = function (req, res) {
     const playerId = new ObjectId(req.params.id);
     const result = mongodb.getDb().db().collection('players').find({ _id: playerId });
     result.toArray().then((playerResult) => {
+        let magicItems
         try {
             if (!playerResult[0]) {
                 throw createError(404, 'Player with that id does not exist.');
             }
-            let magicItems = playerResult[0].magicItemList;
+            magicItems = playerResult[0].magicItemList;
         } catch (error) {
             console.log(error.message);
             next(error);
