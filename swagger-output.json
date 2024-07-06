@@ -5,10 +5,10 @@
     "description": "Create, update, get, and delete contact data through this API.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-project2-q9um.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "securityDefinitions": {
     "oAuth": {
