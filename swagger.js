@@ -5,7 +5,7 @@ const doc = {
     title: 'Contacts API',
     description: 'Create, update, get, and delete contact data through this API.'
   },
-  host: 'localhost:3000',
+  host: 'cse341-project2-q9um.onrender.com',
   securityDefinitions: {
     oAuth: {
       type: 'oauth2',
