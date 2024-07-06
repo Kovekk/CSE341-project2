@@ -5,11 +5,19 @@
     "description": "Create, update, get, and delete contact data through this API.",
     "version": "1.0.0"
   },
-  "host": "cse341-project2-q9um.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
+  "securityDefinitions": {
+    "oAuth": {
+      "type": "oauth2",
+      "authorizationUrl": "/auth/google",
+      "flow": "implicit",
+      "scopes": {}
+    }
+  },
   "paths": {
     "/": {
       "get": {
@@ -40,8 +48,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       },
       "post": {
         "description": "",
@@ -96,10 +112,18 @@
           "200": {
             "description": "OK"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     },
     "/player/{id}": {
@@ -119,8 +143,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       },
       "put": {
         "description": "",
@@ -181,10 +213,18 @@
           "204": {
             "description": "No Content"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       },
       "delete": {
         "description": "",
@@ -199,8 +239,16 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     },
     "/player/{id}/addMagicItem/{magicItemId}": {
@@ -223,8 +271,16 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     },
     "/player/{id}/removeMagicItem/{magicItemId}": {
@@ -247,8 +303,16 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     },
     "/player/{id}/magicItemList": {
@@ -265,8 +329,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     },
     "/magicItem/": {
@@ -278,8 +350,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       },
       "post": {
         "description": "",
@@ -310,10 +390,18 @@
           "200": {
             "description": "OK"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     },
     "/magicItem/{id}": {
@@ -333,8 +421,16 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       },
       "put": {
         "description": "",
@@ -371,10 +467,18 @@
           "204": {
             "description": "No Content"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "422": {
             "description": "Unprocessable Entity"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       },
       "delete": {
         "description": "",
@@ -389,8 +493,16 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
-        }
+        },
+        "security": [
+          {
+            "oAuth": []
+          }
+        ]
       }
     }
   }

@@ -5,6 +5,8 @@ const createError = require('http-errors');
 const controller = {};
 
 controller.getAllPlayers = function (req, res) {
+    
+    console.log('code is running')
     const result = mongodb.getDb().db().collection('players').find();
     result.toArray().then((players) => {
         res.setHeader('Content-Type', 'application/json');
